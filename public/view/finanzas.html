@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Finanzas Flia Velandia Salamanca</title>
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+	<header><h1 class="text-center">Finanzas Flia. Velandia Salamanca</h1></header>
+	<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+		<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="tip-ing-gasto">Tipo de registro:</label>
+			<select class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="tip-ing-gasto" id="tip-ing-gasto" alt="Seleccione el tipo de registro" title="Seleccione el tipo de registro">
+				<option value="">Seleccione ...</option>
+				<option value="Ingreso" alt="Hace referencia a lo que se recibe (entra) a nuestro bolsillo o cuenta, es lo que ganamos" title="Hace referencia a lo que se recibe (entra) a nuestro bolsillo o cuenta, es lo que ganamos">Ingreso</option>
+				<option value="Gasto" alt="Hace referencia a lo que gastamos o pagamos por productos o servicios, sale de nuetro bolsillo o cuenta." title="Hace referencia a lo que gastamos o pagamos por productos o servicios, sale de nuetro bolsillo o cuenta.">Gasto</option>
+			</select>
+		</div>
+		<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="nom-ing-gasto">Responsable:</label>
+			<select class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="nom-ing-gasto" id="nom-ing-gasto">
+				<option value="">Seleccione ...</option>
+				<option value="Adriana" alt="Adriana Maria Salamanca Anaya" title="Adriana Maria Salamanca Anaya">Adriana Salamanca</option>
+				<option value="Brayan" alt="Brayan Steeven Velandia Salamanca" title="Brayan Steeven Velandia Salamanca">Brayan Velandia</option>
+				<option value="Camilo" alt="Juan Camilo Velandia Salamanca" title="Juan Camilo Velandia Salamanca">Juan Camilo Velandia</option>
+				<option value="Wilson" alt="Wilson Giovanny Velandia Barreto" title="Wilson Giovanny Velandia Barreto">Wilson Velandia</option>
+			</select>
+		</div>
+		<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="mot-ing-gasto">Concepto:</label>
+			<select class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="mot-ing-gasto" id="mot-ing-gasto" alt="Seleccione el concepto que se pago o por el cual se recibio dinero." title="Seleccione el concepto que se pago o por el cual se recibio dinero.">
+				<option value="">Seleccione ...</option>
+				<option value="Salario">Salario</option>
+				<option value="Arriendos">Arriendos</option>
+				<option value="Ingresos moto">Ingresos moto</option>
+				<option value="Ingresos Swift">Ingresos Swift</option>
+				<option value="Ingresos Hafei">Ingresos Hafei</option>
+				<option value="Cadenas">Cadenas</option>
+				<option value="Diario Brayan">Diario Brayan</option>
+				<option value="Desayunos">Desayunos</option>
+				<option value="Celular Adriana">Celular Adriana</option>
+				<option value="Recarga Celular">Recarga Celular</option>
+				<option value="Cuota Fondo">Cuota Fondo</option>
+				<option value="Pensión Camilo">Pensión Camilo</option>
+				<option value="Pensión Brayan">Pensión Brayan</option>
+				<option value="Mercado">Mercado</option>
+				<option value="Pago Luz">Pago Luz</option>
+				<option value="Pago Agua">Pago Agua</option>
+				<option value="Pago Teléfono">Pago Teléfono</option>
+				<option value="Pago Gas">Pago Gas</option>
+				<option value="ICETEX Adriana">ICETEX Adriana</option>
+				<option value="Gastos casa">Gastos casa</option>
+				<option value="Gastos ropa">Gastos ropa</option>
+				<option value="Comida fuera">Comida fuera</option>
+				<option value="SOAT moto">SOAT moto</option>
+				<option value="SOAT Swift">SOAT Swift</option>
+				<option value="SOAT Hafei">SOAT Hafei</option>
+				<option value="Tecnomecánica moto">Tecnomecánica moto</option>
+				<option value="Tecnomecánica Swift">Tecnomecánica Swift</option>
+				<option value="Tecnomecánica Hafei">Tecnomecánica Hafei</option>
+				<option value="Otros gastos moto">Otros gastos moto</option>
+				<option value="Otros gastos Swift">Otros gastos Swift</option>
+				<option value="Otros gastos Hafei">Otros gastos Hafei</option>
+			</select>
+		</div>
+		<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="val-ing-gasto">Valor:</label>
+			<input id="val-ing-gasto" name="val-ing-gasto" class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" type="text" placeholder="Digite el valor" alt="Digite el valor que se pago o recibio, sin puntos, comas o signos." title="Digite el valor que se pago o recibio, sin puntos, comas o signos.">
+		</div>
+		<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="val-ing-gasto">Fecha:</label>
+			<input id="fec-ing-gasto" name="fec-ing-gasto" class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" type="date" placeholder="Digite el valor" alt="Seleccione la fecha en que se pago o recibio el dinero." title="Seleccione la fecha en que se pago o recibio el dinero.">
+		</div>
+		<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
+			<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="obs-ing.gasto">Observacion:</label>
+			<textarea class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="obs-ing-gasto" id="obs-ing-gasto" cols="30" rows="5" placeholder="Si tiene una observación hagalá acá" alt="Realice una observación del ingreso o gasto realizado." title="Realice una observación del ingreso o gasto realizado."></textarea>
+		</div>
+		<div class="clearfix">&nbsp;</div>
+		<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+				<button id="ingresar" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 btn btn-primary btn-lg" type="button" style="float:none" alt="Ingresar nuevo registro" title="Ingresar nuevo registro"><span>Ingresar</span><span class="hidden-xs"> registro</span></button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+				<button id="regresar" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 btn btn-warning btn-lg" type="button" alt="Regresar al menú principal" title="Regresar al menú principal">Regresar</button>
+			</div>
+		</div>
+
+	</section>
+	<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="col-xs-3 col-sm-2 col-md-1 col-lg-1 text-center">Fecha</th>
+						<th class="col-xs-6 col-sm-2 col-md-2 col-lg-2 text-center">Concepto</th>
+						<th class="col-xs-3 col-sm-1 col-md-1 col-lg-1 text-center">Valor</th>
+						<th class="hidden-xs col-sm-2 col-md-1 col-lg-1 text-center">Responsable</th>
+						<th class="hidden-xs col-sm-5 col-md-6 col-lg-6 text-center">Observación</th>
+						<th class="hidden-xs hidden-sm col-md-1 col-lg-1 text-center">Usuario</th>
+					</tr>
+				</thead>
+				<tbody id="registros"></tbody>
+			</table>
+		</div>
+	</section>
+	<footer class="text-muted text-center">
+		<span>© 2016 - Todos los derechos reservados<br>willyv78@gmail.com @willyv78</span>
+		<div class="clearfix">&nbsp;</div>
+	</footer>
+	<!-- Firebase -->
+	<script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Custom JS -->
+	<script src="./js/script.js"></script>
+</body>
+</html>

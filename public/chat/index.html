@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firebase Chat</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <div class="container" style="margin-bottom:200px;">
+      <h1 style="text-align: center">Chat Familia Velandia Salamanca</h1>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+          <!-- Message list panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">Mensajes</div>
+            <div class="panel-body">
+              <!-- Message list -->
+              <div id="messageList" class="list-group" style="margin-bottom: 0">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <button id="regresar" class="btn btn-warning btn-lg" type="button" alt="Regresar al menú principal" title="Regresar al menú principal">Regresar</button>
+            <div class="clearfix">&nbsp;</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- New message panel -->
+    <div class="panel panel-default" style="position: fixed;bottom: 0px;width: 100%;margin:0;">
+      <div class="panel-heading">Nuevo Mensaje</div>
+      <div class="panel-body">
+        <div class="input-group" style="width: 100%; text-align: center;">
+          <!-- Login button -->
+          <button id="loginButton" style="width: 100%; margin-bottom: 10px">Ingresar con Twitter</button>
+
+          <!-- Logout button -->
+          <button id="logoutButton" style="width: 100%; margin-bottom: 10px">Cerrar sesión</button>
+
+          <!-- Logged in text -->
+          <p id="loggedInText" style="width: 100%; margin-bottom: 10px"></p>
+
+          <!-- Username input -->
+          <!-- <input id="username" type="text" placeholder="Username" style="width: 100%; margin-bottom: 10px" /> -->
+
+          <!-- New message input -->
+          <input id="newMessage" type="text" placeholder="Mensaje..." class="form-control" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

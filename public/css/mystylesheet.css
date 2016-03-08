@@ -1,0 +1,50 @@
+@import url(http://fonts.googleapis.com/css?family=Federant); 
+#divInicio {
+    background-image: url(../img/fondoInicio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: currentColor;
+    background-blend-mode: luminosity;
+    color: cadetblue;
+    height: 80vh;
+    transition: .5s;
+    width: 100%;
+}
+#divInicio:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, currentColor, rgba(0,0,0,.2) 20%, rgba(0,0,0,.2) 80%, currentColor);
+    filter: saturate(2);
+}
+h1 {
+    font-size: 12vmin;
+    text-align: center;
+    font-weight: 400;
+    font-variant: small-caps;
+    transition: .5s;
+    text-shadow: 0 0 1px #fff;
+    mix-blend-mode: screen;
+    color: aliceblue;
+}
+p {
+  font-size: 2rem;
+  color: #CCC;
+  text-align: center;
+  position: relative;
+}
+.fa-text-twitter{
+    float: none;
+    position: relative;
+}
+.fa-text-twitter:before {
+    content: "";
+}
+label{
+  /*color: #FFF;*/
+  text-align: left;
+}
