@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Aplicación Flia Velandia Salamanca</title>
-
 	<!--Botones de redes sociales CSS -->
 	<link rel="stylesheet" href="../css/bootstrap-social.css">
 	<!-- fuente para iconos -->
@@ -12,10 +11,9 @@
 	<!--SweetAlert Mensajes de alerta CSS -->
 	<link rel="stylesheet" href="../css/sweet-alert.css">
 	<!-- Bootstrap CSS -->
-	<!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="../css/mystylesheet.css">
-
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -28,13 +26,17 @@
 		<nav class="navbar navbar-inverse" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">App Familia Velandia Salamanca</a>
+				<div id="botonLoginNav" class="pull-right">
+					<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span>&nbsp;<span id="texto-twitter">Login</span></a>
+				</div>
+				<img class="pull-right" id="alert-img" width="3%" alt="Imagen de perfil twitter" title="Imagen de perfil twitter">
+				<a class="navbar-brand" href="../" alt="Ir al Inicio" title="Ir al Inicio">App Familia Velandia Salamanca</a>
 			</div>
 		
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,101 +48,117 @@
 					<li><a href="#">Conceptos</a></li>
 					<li><a href="#">Informes</a></li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li id="botonLoginNav">
-						<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span><span>&nbsp;&nbsp;Login con Twitter</span></a>
-					</li>
-				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav>
 	</header>
-
-	<section id="contenido" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<section id="contenido" class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
 		<div class="container">
 			<div class="row">
-				<div id="alert" class="alert alert-info">
-					<img id="alert-img" alt="Imagen de perfil twitter" width="10%">
-					<strong id="alert-title">¡Importante!</strong>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-offset-lg-1 col-lg-10">
+					<legend>Formulario de Ingreso</legend>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-					<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="tip-ing-gasto">Tipo de registro *:</label>
-						<select class="form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="tip-ing-gasto" id="tip-ing-gasto" alt="Seleccione el tipo de registro" title="Seleccione el tipo de registro">
-							<option value="">Seleccione ...</option>
-							<option value="Ingreso" alt="Hace referencia a lo que se recibe (entra) a nuestro bolsillo o cuenta, es lo que ganamos" title="Hace referencia a lo que se recibe (entra) a nuestro bolsillo o cuenta, es lo que ganamos">Ingreso</option>
-							<option value="Gasto" alt="Hace referencia a lo que gastamos o pagamos por productos o servicios, sale de nuetro bolsillo o cuenta." title="Hace referencia a lo que gastamos o pagamos por productos o servicios, sale de nuetro bolsillo o cuenta.">Gasto</option>
-						</select>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<div class="col-xs-4 col-sm-4 col-md-5 col-lg-6">
+							<label for="tip-ing-gasto">Tipo registro *:</label>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-7 col-lg-6">
+							<select class="form-control" name="tip-ing-gasto" id="tip-ing-gasto" alt="Seleccione el tipo de registro" title="Seleccione el tipo de registro">
+								<option value="">Seleccione ...</option>
+								<option value="Ingreso" alt="Hace referencia a lo que se recibe (entra) a nuestro bolsillo o cuenta, es lo que ganamos" title="Hace referencia a lo que se recibe (entra) a nuestro bolsillo o cuenta, es lo que ganamos">Ingreso</option>
+								<option value="Gasto" alt="Hace referencia a lo que gastamos o pagamos por productos o servicios, sale de nuetro bolsillo o cuenta." title="Hace referencia a lo que gastamos o pagamos por productos o servicios, sale de nuetro bolsillo o cuenta.">Gasto</option>
+							</select>
+						</div>
 					</div>
-					<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="nom-ing-gasto">Responsable *:</label>
-						<select class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="nom-ing-gasto" id="nom-ing-gasto">
-							<option value="">Seleccione ...</option>
-							<option value="Adriana" alt="Adriana Maria Salamanca Anaya" title="Adriana Maria Salamanca Anaya">Adriana Salamanca</option>
-							<option value="Brayan" alt="Brayan Steeven Velandia Salamanca" title="Brayan Steeven Velandia Salamanca">Brayan Velandia</option>
-							<option value="Camilo" alt="Juan Camilo Velandia Salamanca" title="Juan Camilo Velandia Salamanca">Juan Camilo Velandia</option>
-							<option value="Wilson" alt="Wilson Giovanny Velandia Barreto" title="Wilson Giovanny Velandia Barreto">Wilson Velandia</option>
-						</select>
+					<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<div class="col-xs-4 col-sm-4 col-md-5 col-lg-6">
+							<label for="nom-ing-gasto">Responsable *:</label>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-7 col-lg-6">
+							<select class="form-control" name="nom-ing-gasto" id="nom-ing-gasto">
+								<option value="">Seleccione ...</option>
+								<option value="Adriana" alt="Adriana Maria Salamanca Anaya" title="Adriana Maria Salamanca Anaya">Adriana Salamanca</option>
+								<option value="Brayan" alt="Brayan Steeven Velandia Salamanca" title="Brayan Steeven Velandia Salamanca">Brayan Velandia</option>
+								<option value="Camilo" alt="Juan Camilo Velandia Salamanca" title="Juan Camilo Velandia Salamanca">Juan Camilo Velandia</option>
+								<option value="Wilson" alt="Wilson Giovanny Velandia Barreto" title="Wilson Giovanny Velandia Barreto">Wilson Velandia</option>
+							</select>
+						</div>
 					</div>
-					<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="mot-ing-gasto">Concepto *:</label>
-						<select class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="mot-ing-gasto" id="mot-ing-gasto" alt="Seleccione el concepto que se pago o por el cual se recibio dinero." title="Seleccione el concepto que se pago o por el cual se recibio dinero.">
-							<option value="">Seleccione ...</option>
-							<option value="Salario">Salario</option>
-							<option value="Arriendos">Arriendos</option>
-							<option value="Ingresos moto">Ingresos moto</option>
-							<option value="Ingresos Swift">Ingresos Swift</option>
-							<option value="Ingresos Hafei">Ingresos Hafei</option>
-							<option value="Cadenas">Cadenas</option>
-							<option value="Diario Brayan">Diario Brayan</option>
-							<option value="Desayunos">Desayunos</option>
-							<option value="Celular Adriana">Celular Adriana</option>
-							<option value="Recarga Celular">Recarga Celular</option>
-							<option value="Cuota Fondo">Cuota Fondo</option>
-							<option value="Pensión Camilo">Pensión Camilo</option>
-							<option value="Pensión Brayan">Pensión Brayan</option>
-							<option value="Mercado">Mercado</option>
-							<option value="Pago Luz">Pago Luz</option>
-							<option value="Pago Agua">Pago Agua</option>
-							<option value="Pago Teléfono">Pago Teléfono</option>
-							<option value="Pago Gas">Pago Gas</option>
-							<option value="ICETEX Adriana">ICETEX Adriana</option>
-							<option value="Gastos casa">Gastos casa</option>
-							<option value="Gastos ropa">Gastos ropa</option>
-							<option value="Comida fuera">Comida fuera</option>
-							<option value="SOAT moto">SOAT moto</option>
-							<option value="SOAT Swift">SOAT Swift</option>
-							<option value="SOAT Hafei">SOAT Hafei</option>
-							<option value="Tecnomecánica moto">Tecnomecánica moto</option>
-							<option value="Tecnomecánica Swift">Tecnomecánica Swift</option>
-							<option value="Tecnomecánica Hafei">Tecnomecánica Hafei</option>
-							<option value="Otros gastos moto">Otros gastos moto</option>
-							<option value="Otros gastos Swift">Otros gastos Swift</option>
-							<option value="Otros gastos Hafei">Otros gastos Hafei</option>
-						</select>
+					<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<div class="col-xs-4 col-sm-4 col-md-5 col-lg-6">
+							<label for="mot-ing-gasto">Concepto *:</label>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-7 col-lg-6">
+							<select class="form-control" name="mot-ing-gasto" id="mot-ing-gasto" alt="Seleccione el concepto que se pago o por el cual se recibio dinero." title="Seleccione el concepto que se pago o por el cual se recibio dinero.">
+								<option value="">Seleccione ...</option>
+								<option value="Alimentación">Alimentación</option>
+								<option value="Almuerzo">Almuerzo</option>
+								<option value="Arriendo">Arriendo</option>
+								<option value="Aseo">Aseo</option>
+								<option value="Belleza">Belleza</option>
+								<option value="Cadenas">Cadenas</option>
+								<option value="Carro">Carro</option>
+								<option value="Casa">Casa</option>
+								<option value="Celular">Celular</option>
+								<option value="Comida">Comida</option>
+								<option value="Deporte">Deporte</option>
+								<option value="Desayuno">Desayunos</option>
+								<option value="Educación">Educación</option>
+								<option value="Entretenimiento">Entretenimiento</option>
+								<option value="Fondo">Fondo</option>
+								<option value="ICETEX">ICETEX</option>
+								<option value="Médico">Médico</option>
+								<option value="Mercado">Mercado</option>
+								<option value="Moto">Moto</option>
+								<option value="Otros">Otros</option>
+								<option value="Ropa">Ropa</option>
+								<option value="Servicios Públicos">Servicios Públicos</option>
+								<option value="Salario">Salario</option>
+								<option value="SOAT">SOAT</option>
+								<option value="Tecnomecánica">Tecnomecánica Hafei</option>
+								<option value="Trabajo">Trabajo</option>
+								<option value="Transporte">Transporte</option>
+								<option value="Viaje">Viaje</option>
+								<option value="Vivienda">Vivienda</option>
+							</select>
+						</div>
 					</div>
-					<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="val-ing-gasto">Valor *:</label>
-						<input id="val-ing-gasto" name="val-ing-gasto" class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" type="text" placeholder="Digite el valor" alt="Digite el valor que se pago o recibio, sin puntos, comas o signos." title="Digite el valor que se pago o recibio, sin puntos, comas o signos.">
+					<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<div class="col-xs-4 col-sm-4 col-md-5 col-lg-6">
+							<label for="val-ing-gasto">Valor *:</label>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-7 col-lg-6">
+							<input id="val-ing-gasto" name="val-ing-gasto" class="form-control" type="text" placeholder="Digite el valor" alt="Digite el valor que se pago o recibio, sin puntos, comas o signos." title="Digite el valor que se pago o recibio, sin puntos, comas o signos.">
+						</div>
 					</div>
-					<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="val-ing-gasto">Fecha:</label>
-						<input id="fec-ing-gasto" name="fec-ing-gasto" class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" type="date" placeholder="Digite el valor" alt="Seleccione la fecha en que se pago o recibio el dinero." title="Seleccione la fecha en que se pago o recibio el dinero.">
+					<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+						<div class="col-xs-4 col-sm-4 col-md-5 col-lg-6">
+							<label for="val-ing-gasto">Fecha:</label>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-7 col-lg-6">
+							<input id="fec-ing-gasto" name="fec-ing-gasto" class="form-control" type="date" placeholder="Digite el valor" alt="Seleccione la fecha en que se pago o recibio el dinero." title="Seleccione la fecha en que se pago o recibio el dinero.">
+						</div>
 					</div>
-					<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<label class="col-xs-12 col-sm-6 col-md-5 col-lg-4" for="obs-ing.gasto">Observacion:</label>
-						<textarea class=" form-control col-xs-12 col-sm-6 col-md-7 col-lg-8" name="obs-ing-gasto" id="obs-ing-gasto" cols="30" rows="5" placeholder="Si tiene una observación hagalá acá" alt="Realice una observación del ingreso o gasto realizado." title="Realice una observación del ingreso o gasto realizado."></textarea>
+					<div class="form-group col-xs-12 col-sm-6 col-md-12 col-lg-9">
+						<div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+							<label for="obs-ing.gasto">Observacion:</label>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+							<textarea class="form-control" name="obs-ing-gasto" id="obs-ing-gasto" rows="3" placeholder="Si tiene una observación hagalá acá" alt="Realice una observación del ingreso o gasto realizado." title="Realice una observación del ingreso o gasto realizado."></textarea>
+						</div>
 					</div>
 					<div class="clearfix">&nbsp;</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
 						* Campo requerido.
 					</div>
 					<div class="clearfix">&nbsp;</div>
-					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+					<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
-							<button id="ingresar" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 btn btn-primary btn-lg" type="button" style="float:none" alt="Ingresar nuevo registro" title="Ingresar nuevo registro"><span>Ingresar</span><span class="hidden-xs"> registro</span></button>
+							<button id="ingresar" class="col-xs-10 col-sm-10 col-md-8 col-lg-6 btn btn-primary btn-lg" type="button" style="float:none" alt="Ingresar nuevo registro" title="Ingresar nuevo registro" style="margin-right: 5px;"><span>Ingresar</span><span class="hidden-xs"> registro</span></button>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
-							<button id="regresar" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 btn btn-warning btn-lg" type="button" alt="Regresar al menú principal" title="Regresar al menú principal">Regresar</button>
+							<button id="regresar" class="col-xs-10 col-sm-10 col-md-8 col-lg-6 btn btn-warning btn-lg" type="button" alt="Regresar al menú principal" title="Regresar al menú principal" style="margin-left: 5px;">Regresar</button>
 						</div>
 					</div>
 				</div>
@@ -153,12 +171,12 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th class="col-xs-3 col-sm-2 col-md-1 col-lg-1 text-center">Fecha</th>
-						<th class="col-xs-6 col-sm-2 col-md-2 col-lg-2 text-center">Concepto</th>
-						<th class="col-xs-3 col-sm-1 col-md-1 col-lg-1 text-center">Valor</th>
-						<th class="hidden-xs col-sm-2 col-md-1 col-lg-1 text-center">Responsable</th>
-						<th class="hidden-xs col-sm-5 col-md-6 col-lg-6 text-center">Observación</th>
-						<th class="hidden-xs hidden-sm col-md-1 col-lg-1 text-center">Usuario</th>
+						<th class="col-xs-3 col-sm-2 col-md-1 col-lg-1">Fecha</th>
+						<th class="col-xs-6 col-sm-2 col-md-2 col-lg-2">Concepto</th>
+						<th class="col-xs-3 col-sm-1 col-md-1 col-lg-1">Valor</th>
+						<th class="hidden-xs col-sm-2 col-md-1 col-lg-1">Responsable</th>
+						<th class="hidden-xs col-sm-5 col-md-6 col-lg-6">Observación</th>
+						<th class="hidden-xs hidden-sm col-md-1 col-lg-1">Usuario</th>
 					</tr>
 				</thead>
 				<tbody id="registros"></tbody>

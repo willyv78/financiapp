@@ -1,13 +1,11 @@
 $(document).ready(function() {
     var ref = new Firebase("https://appfliavelsal.firebaseio.com");
-
     var $loginButtonNav = $("#loginButtonNav");
     var $loginButtonCont = $("#loginButtonCont");
     var $logoutButton = $("#logoutButton");
     var $botonLoginNav = $("#botonLoginNav");
     var $textotwitter = $("#texto-twitter");
     var alertBox = $('#alert');
-
     // Funcion que hace la conección con firebase y twitter
     function conectarTwitter () {
         ref.authWithOAuthPopup("twitter", function(error, authData) {
@@ -57,9 +55,9 @@ $(document).ready(function() {
         var imagen = opts.imagen;
         var botonNav = opts.botonNav;
 
-        alertBox.removeClass().addClass(className);
-        alertBox.children('#alert-title').text(' ' + title + '\n' + detail);
-        $('#alert-img').attr('src', imagen);
+        // alertBox.removeClass().addClass(className);
+        // alertBox.children('#alert-title').text(' ' + title + '\n' + detail);
+        $('#alert-img').attr({'src': imagen, 'title' : title + detail, 'alt' : title + detail});
         $('#texto-twitter').html(botonNav);
     }
 
@@ -82,7 +80,7 @@ $(document).ready(function() {
                     detail: 'Usted no esta conectado.',
                     imagen: './img/avatar.png',
                     className: 'alert-danger',
-                    botonNav: 'Login con Twitter'
+                    botonNav: 'Login'
                 });
                 $("#divInicio").load("./view/login.html");
             }

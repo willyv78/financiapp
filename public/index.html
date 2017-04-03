@@ -1,103 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Aplicación Flia Velandia Salamanca</title>
+	<head>
+		<meta charset="UTF-8">
+	  	<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Aplicación Flia Velandia Salamanca</title>
 
-	<!--Botones de redes sociales CSS -->
-	<link rel="stylesheet" href="./css/bootstrap-social.css">
-	<!-- fuente para iconos -->
-	<link rel="stylesheet" href="./css/font-awesome.css">
-	<!--SweetAlert Mensajes de alerta CSS -->
-	<link rel="stylesheet" href="./css/sweet-alert.css">
-	<!-- Bootstrap CSS -->
-	<!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="./css/mystylesheet.css">
+		<!--Botones de redes sociales CSS -->
+		<link rel="stylesheet" href="./css/bootstrap-social.css">
+		<!-- fuente para iconos -->
+		<link rel="stylesheet" href="./css/font-awesome.css">
+		<!--SweetAlert Mensajes de alerta CSS -->
+		<link rel="stylesheet" href="./css/sweet-alert.css">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="./css/mystylesheet.css">
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-</head>
-<body>
-	<header>
-		<nav class="navbar navbar-inverse" role="navigation">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">App Familia Velandia Salamanca</a>
-			</div>
-		
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#">Inicio</a></li>
-					<li><a href="#">Finanzas</a></li>
-					<li><a href="#">Chat</a></li>
-					<li><a href="#">Conceptos</a></li>
-					<li><a href="#">Informes</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li id="botonLoginNav">
-						<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span>&nbsp;&nbsp;<span id="texto-twitter">Login con Twitter</span></a>
-					</li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-		</nav>
-	</header>
-	<section id="contenido" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<div class="container">
-			<div class="row">
-				<div id="alert" class="alert alert-info">
-					<img id="alert-img" alt="Imagen de perfil twitter" width="10%">
-					<strong id="alert-title">¡Importante!</strong>
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-inverse" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div id="botonLoginNav" class="pull-right">
+						<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span>&nbsp;<span id="texto-twitter">Login</span></a>
+					</div>
+					<img class="pull-right" id="alert-img" alt="Imagen de perfil twitter" title="Imagen de perfil twitter">
+					<a class="navbar-brand" href="./" alt="Ir al Inicio" title="Ir al Inicio">App Familia Velandia Salamanca</a>
 				</div>
-				<div id="divInicio" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-					<h1>¡Bienvenid@!</h1>
-					<div class="clearfix">&nbsp;</div>
-					<p>Eres parte de la familia Velandia Salamanca.</p>
-					<div class="clearfix">&nbsp;</div>
-					<div class="clearfix">&nbsp;</div>
-					<div class="clearfix">&nbsp;</div>
-					<div class="clearfix">&nbsp;</div>
-					<a id="loginButtonCont" class="btn btn-twitter">
-						<span class="fa fa-twitter" style="float:none;position:relative;"></span>
-						<span class="fa-text-twitter">&nbsp;&nbsp;Login con Twitter</span>
-					</a>
-					<div class="clearfix">&nbsp;</div>
-					<div class="clearfix">&nbsp;</div>
-					<div class="clearfix">&nbsp;</div>
-					<div class="clearfix">&nbsp;</div>
-					<p>La vida es hermosa, al lado de nuestro seres amados.</p>
-					<div class="clearfix">&nbsp;</div>
+			
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Finanzas</a></li>
+						<li><a href="#">Chat</a></li>
+						<li><a href="#">Conceptos</a></li>
+						<li><a href="#">Informes</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</header>
+		<section id="contenido" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="container">
+				<div class="row">
+					<div id="divInicio" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<h1>¡Bienvenid@!</h1>
+						<div class="clearfix">&nbsp;</div>
+						<p>Eres parte de la familia Velandia Salamanca.</p>
+						<div class="clearfix">&nbsp;</div>
+						<a id="loginButtonCont" class="btn btn-twitter">
+							<span class="fa fa-twitter" style="float:none;position:relative;"></span>
+							<span class="fa-text-twitter">&nbsp;&nbsp;Login con Twitter</span>
+						</a>
+						<div class="clearfix">&nbsp;</div>
+						<p>La vida es hermosa, al lado de nuestro seres amados.</p>
+						<div class="clearfix">&nbsp;</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<div class="clearfix">&nbsp;</div>
-	<footer class="text-muted text-center">
-		<span>© 2016 - Todos los derechos reservados<br>willyv78@gmail.com @willyv78</span>
+		</section>
 		<div class="clearfix">&nbsp;</div>
-	</footer>
+		<footer class="text-muted text-center">
+			<span>© 2016 - Todos los derechos reservados<br>willyv78@gmail.com @willyv78</span>
+			<div class="clearfix">&nbsp;</div>
+		</footer>
 
-	<!-- Firebase -->
-	<script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
-	<!-- jQuery -->
-	<script src="./js/jquery.min.js"></script>
-	<!-- SweetAlert alertas tipo modal -->
-	<script src="./js/sweet-alert.min.js"></script>
-	<!-- Bootstrap JavaScript -->
-	<script src="./js/bootstrap.min.js"></script>
-	<!-- Custom JS -->
-	<script src="./js/script.js"></script>
-</body>
+		<!-- Firebase -->
+		<script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
+		<!-- jQuery -->
+		<script src="./js/jquery.min.js"></script>
+		<!-- SweetAlert alertas tipo modal -->
+		<script src="./js/sweet-alert.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./js/bootstrap.min.js"></script>
+		<!-- Custom JS -->
+		<script src="./js/script.js"></script>
+	</body>
 </html>

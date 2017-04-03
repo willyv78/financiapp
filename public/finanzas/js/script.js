@@ -10,7 +10,6 @@ $(document).ready(function() {
   // Get references to Firebase data cuf5PLsqRDHvGUgPEA4AulKRL 2Z8kNQAGQCKz1avqkgcYtAq1JoBYsVIhzXspYOkiAFQcntuTLd
   // var ref = new Firebase("https://fiery-heat-6165.firebaseio.com/finazas");
   var ref = new Firebase("https://appfliavelsal.firebaseio.com/finazas");
-
   // Get references to DOM elements
   var $tipo = $("#tip-ing-gasto");
   var $resp = $("#nom-ing-gasto");
@@ -21,14 +20,11 @@ $(document).ready(function() {
   var $registerList = $("#registros");
   var $username = $("#username");
   var $insertButton = $("#ingresar");
-
-  var $loginButtonNav = $("#loginButtonNav");
   var $loginButtonCont = $("#loginButtonCont");
   var $logoutButton = $("#logoutButton");
   var $botonLoginNav = $("#botonLoginNav");
   var alertBox = $('#alert');
-   var globalAuthData;
-
+  var globalAuthData;
   // Add a new message to the message list
   function addMessage(username, tipo, resp, conc, val, obs, fec) {
     var calsetd = "danger";
@@ -36,9 +32,8 @@ $(document).ready(function() {
       calsetd = "success";
     }
     var el = $("<tr class='" + calsetd + "'><td class='text-center'>" + fec + "</td><td class='text-left'>" + conc + "</td><td class='text-right'>" + val + "</td><td class='hidden-xs text-center'>" + resp + "</td><td class='hidden-xs text-left'>" + obs + "</td><td class='hidden-xs hidden-sm text-center'>" + username + "</td></tr>");
-    $registerList.append(el);
+    $registerList.prepend(el);
   }
-
   // Loop through the last ten messages stored in Firebase
   ref.on("child_added", function(snapshot) {
     var message = snapshot.val();
@@ -54,7 +49,6 @@ $(document).ready(function() {
 
     addMessage(username, tipo, resp, conc, val, obs, fec);
   });
-
   // funcion que valida si un campo en el formulario esta vacio
   function validaCampo (campo) {
     var valorCampo = campo.val();
@@ -73,7 +67,6 @@ $(document).ready(function() {
       return false;
     }
   }
-
   // Listen for key presses on the new message input
   $insertButton.click(function (e) {
     // Get field values
@@ -87,7 +80,6 @@ $(document).ready(function() {
       fec = ftoday;
     }
     var username = $username.val();
-
     if((tipo) && (resp) && (conc) && (val)){
       ref.push({
         tipo: tipo,
@@ -102,7 +94,6 @@ $(document).ready(function() {
           console.log("Error agregando nuevo registro:", error);
         }
       });
-
       // Reset new message input
       $tipo.val("");
       $resp.val("");
@@ -111,24 +102,20 @@ $(document).ready(function() {
       $obs.val("");
       $fec.val("");
     }
-
   });
-
-
   // Opciones para mostrar alertas
   function showAlert(opts) {
       var title = opts.title;
       var detail = opts.detail;
-      var className = 'alert ' + opts.className;
+      var className = 'pull-right alert ' + opts.className;
       var imagen = opts.imagen;
       var botonNav = opts.botonNav;
 
-      alertBox.removeClass().addClass(className);
-      alertBox.children('#alert-title').text(' ' + title + '\n' + detail);
-      $('#alert-img').attr('src', imagen);
+      // alertBox.removeClass().addClass(className);
+      // alertBox.children('#alert-title').text(' ' + title + ' ' + detail);
+      $('#alert-img').attr({'src': imagen, 'title' : title + detail, 'alt' : title + detail});
       $('#botonLoginNav').html(botonNav);
   }
-
   // funcion que valida si hay un usuario registrado
   function userAuthTwitter () {
       ref.onAuth(function globalOnAuth(authData) {
@@ -138,25 +125,48 @@ $(document).ready(function() {
               title: ' Conectado como ',
               detail: authData.twitter.username,
               imagen: authData.twitter.profileImageURL,
-              className: 'alert-success',
-              botonNav: '<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span><span>&nbsp;&nbsp;Salir</span></a>'
+              className: 'alert-info',
+              botonNav: '<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span>&nbsp;<span id="texto-twitter">Salir</span></a>'
             });
-            // $("#divInicio").load("./view/home.html");
-            // console.log(authData);
           } else {
             showAlert({
               title: 'Atención',
               detail: 'Usted no esta conectado.',
               imagen: './img/avatar.png',
               className: 'alert-danger',
-              botonNav: '<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span><span>&nbsp;&nbsp;Login con Twitter</span></a>'
+              botonNav: '<a id="loginButtonNav" class="btn btn-twitter"><span class="fa fa-twitter" style="float:none;position:relative;"></span>&nbsp;<span id="texto-twitter">Login</span></a>'
             });
             window.location = "../";
           }
       });
   }
-
   userAuthTwitter();
+  // Funcion que hace la conección con firebase y twitter
+  function conectarTwitter () {
+      ref.authWithOAuthPopup("twitter", function(error, authData) {
+          if (error) {
+              console.error("Error autenticando con Twitter:", error);
+          }
+          else{
+              userAuthTwitter();
+              $("#divInicio").load("./view/home.html");
+          }
+      });
+  }
+  // funcion que desconecta con firebase y twitter
+  function desconectarTwitter () {
+      ref.unauth();
+  }
+  // Login with Twitter when the login button is pressed
+  $("#loginButtonNav").on("click", clickAca);
+  function clickAca(argument) {
+    if ($("#texto-twitter").text() === 'Salir') {
+      desconectarTwitter();
+    }
+    else{
+      conectarTwitter();
+    }
+  }
 
   // Cuando se hace click sobre el boton regresar dentro del formulario de nuevo registro en finanzas
   $("#regresar").on("click", function () {
